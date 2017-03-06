@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
 
+@property(nonatomic) NSString *partyId;
+@property(nonatomic) NSString *privateId;
+@property(nonatomic) NSString *hostToken;
 
 @end
-

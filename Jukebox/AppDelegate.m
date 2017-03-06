@@ -7,44 +7,125 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
-@end
+#import <SpotifyAuthentication/SpotifyAuthentication.h>
+#import <SpotifyMetadata/SpotifyMetadata.h>
+#import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
+#import "Config.h"
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Set up shared authentication information
+    SPTAuth *auth = [SPTAuth defaultInstance];
+    auth.clientID = @kClientId;
+    auth.requestedScopes = @[SPTAuthStreamingScope];
+    auth.redirectURL = [NSURL URLWithString:@kCallbackURL];
+#ifdef kTokenSwapServiceURL
+    auth.tokenSwapURL = [NSURL URLWithString:@kTokenSwapServiceURL];
+#endif
+#ifdef kTokenRefreshServiceURL
+    auth.tokenRefreshURL = [NSURL URLWithString:@kTokenRefreshServiceURL];
+#endif
+    auth.sessionUserDefaultsKey = @kSessionUserDefaultsKey;
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    NSLog(@"URL scheme: %@", [url scheme]);
+    NSLog(@"URL query: %@", [url query]);
+    NSLog(@"URL path: %@", [url path]);
+    
+    // parse query params
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url
+                                                resolvingAgainstBaseURL:NO];
+    NSArray *queryItems = urlComponents.queryItems;
+    NSString *hostToken = [self valueForKey:@"hostToken"
+                          fromQueryItems:queryItems];
+    NSString *privateId = [self valueForKey:@"privateId"
+                             fromQueryItems:queryItems];
+    
+    // if we were passed a URL w/ token and playlist ID, then load the playlist (host link)
+    if(hostToken != nil && privateId != nil){
+        NSLog(@"URL hostToken: %@", hostToken);
+        NSString *url = [NSString stringWithFormat:@"https://www.playjuke.com/p/%@/?hostToken=%@", privateId, hostToken];
+        NSURL *jukeHostPage = [NSURL URLWithString: url];
+        
+        // notify web view to load the new URL
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:jukeHostPage];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadRequest"
+                                                            object:nil
+                                                          userInfo:@{@"requestObj":requestObj}];
+    }
+    
+    // if we are passed a jukebox URL w/ just private ID, then we join the playlist (join link)
+    NSString *jukeboxScheme = @"jukebox";
+    if([[url scheme] isEqualToString:jukeboxScheme]){
+        NSLog(@"Jukebox app URL");
+        
+        NSString *playlistId = [self valueForKey:@"playlistId"
+                                 fromQueryItems:queryItems];
+        
+        if(playlistId != nil){
+            NSString *url = [NSString stringWithFormat:@"https://www.playjuke.com/p/%@", playlistId];
+            NSURL *jukeJoinPage = [NSURL URLWithString: url];
+            
+            // notify web view to load the new URL
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:jukeJoinPage];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loadRequest"
+                                                                object:nil
+                                                              userInfo:@{@"requestObj":requestObj}];
+        }
+    }
+
+    SPTAuth *auth = [SPTAuth defaultInstance];
+    
+    SPTAuthCallback authCallback = ^(NSError *error, SPTSession *session) {
+        // This is the callback that'll be triggered when auth is completed (or fails).
+        
+        if (error) {
+            NSLog(@"*** Auth error: %@", error);
+        } else {
+            auth.session = session;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"sessionUpdated" object:self];
+    };
+    
+    /*
+     Handle the callback from the authentication service. -[SPAuth -canHandleURL:]
+     helps us filter out URLs that aren't authentication URLs (i.e., URLs you use elsewhere in your application).
+     */
+    
+    if ([auth canHandleURL:url]) {
+        [auth handleAuthCallbackWithTriggeredAuthURL:url callback:authCallback];
+        return YES;
+    }
+    
+    
+//    if ([[url query] rangeOfString:@"hostToken"].location == NSNotFound) {
+//    }
+//    
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        ViewController *controller=[storyboard instantiateViewControllerWithIdentifier:@"MusicViewController"];
+//        controller.partyId = [[url query] stringByRemovingPercentEncoding];
+//        NSLog(@"partyId: %@", controller.partyId);
+//        [self.window.rootViewController.navigationController pushViewController:controller animated:YES];
+//        
+//        return YES;
+    
+
+    
+    return NO;
 }
 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (NSString *)valueForKey:(NSString *)key
+           fromQueryItems:(NSArray *)queryItems
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name=%@", key];
+    NSURLQueryItem *queryItem = [[queryItems
+                                  filteredArrayUsingPredicate:predicate]
+                                 firstObject];
+    return queryItem.value;
 }
 
 

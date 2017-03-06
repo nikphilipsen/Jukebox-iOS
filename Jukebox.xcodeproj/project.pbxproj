@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6340A51E5BA995000224DB /* JukeboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6340A41E5BA995000224DB /* JukeboxViewController.m */; };
+		2A6340AE1E5BAC0E000224DB /* JukeboxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6340AD1E5BAC0E000224DB /* JukeboxWebViewController.m */; };
 		2A6A51E21E29C6CA00643AEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A51E11E29C6CA00643AEB /* main.m */; };
 		2A6A51E51E29C6CA00643AEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A51E41E29C6CA00643AEB /* AppDelegate.m */; };
 		2A6A51E81E29C6CA00643AEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A51E71E29C6CA00643AEB /* ViewController.m */; };
@@ -14,6 +16,27 @@
 		2A6A51ED1E29C6CA00643AEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A51EC1E29C6CA00643AEB /* Assets.xcassets */; };
 		2A6A51F01E29C6CA00643AEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A51EE1E29C6CA00643AEB /* LaunchScreen.storyboard */; };
 		2A6A51FB1E29C6CA00643AEB /* JukeboxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A51FA1E29C6CA00643AEB /* JukeboxTests.m */; };
+		2A6A52081E29C6F800643AEB /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A52061E29C6F800643AEB /* SpotifyAudioPlayback.framework */; };
+		2A6A52091E29C6F800643AEB /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A52071E29C6F800643AEB /* SpotifyAuthentication.framework */; };
+		2A6A520C1E29C71500643AEB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A520B1E29C71500643AEB /* AVFoundation.framework */; };
+		2A6A520E1E29C71D00643AEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A520D1E29C71D00643AEB /* SystemConfiguration.framework */; };
+		2A6A52471E29D03E00643AEB /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6A52461E29D03E00643AEB /* SpotifyMetadata.framework */; };
+		2A6A524A1E29D11100643AEB /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A52491E29D11100643AEB /* LoginController.m */; };
+		2A6A524D1E29D15100643AEB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A524C1E29D15100643AEB /* WebViewController.m */; };
+		2A6A524F1E29D17700643AEB /* backdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A524E1E29D17700643AEB /* backdrop.png */; };
+		2A6A52521E2A07EB00643AEB /* PartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A52511E2A07EB00643AEB /* PartyController.m */; };
+		2A6A52551E2A944500643AEB /* Jukebox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52531E2A944500643AEB /* Jukebox@2x.png */; };
+		2A6A52561E2A944500643AEB /* Jukebox@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52541E2A944500643AEB /* Jukebox@1x.png */; };
+		2A6A52591E2A94D100643AEB /* JukeboxSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52571E2A94D100643AEB /* JukeboxSmall@2x.png */; };
+		2A6A525A1E2A94D100643AEB /* JukeboxSmall@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52581E2A94D100643AEB /* JukeboxSmall@1x.png */; };
+		2A6A52631E2A992200643AEB /* Play@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52611E2A992200643AEB /* Play@1x.png */; };
+		2A6A52641E2A992200643AEB /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52621E2A992200643AEB /* Play@2x.png */; };
+		2A6A52691E2A99AD00643AEB /* Next@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52651E2A99AD00643AEB /* Next@1x.png */; };
+		2A6A526A1E2A99AD00643AEB /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52661E2A99AD00643AEB /* Next@2x.png */; };
+		2A6A526B1E2A99AD00643AEB /* Pause@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52671E2A99AD00643AEB /* Pause@1x.png */; };
+		2A6A526C1E2A99AD00643AEB /* Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A52681E2A99AD00643AEB /* Pause@2x.png */; };
+		2A6A526F1E2AA48900643AEB /* Arrow@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A526D1E2AA48900643AEB /* Arrow@1x.png */; };
+		2A6A52701E2AA48900643AEB /* Arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A526E1E2AA48900643AEB /* Arrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A6340A31E5BA995000224DB /* JukeboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxViewController.h; sourceTree = "<group>"; };
+		2A6340A41E5BA995000224DB /* JukeboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxViewController.m; sourceTree = "<group>"; };
+		2A6340AC1E5BAC0E000224DB /* JukeboxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxWebViewController.h; sourceTree = "<group>"; };
+		2A6340AD1E5BAC0E000224DB /* JukeboxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxWebViewController.m; sourceTree = "<group>"; };
 		2A6A51DD1E29C6CA00643AEB /* Jukebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jukebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6A51E11E29C6CA00643AEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A6A51E31E29C6CA00643AEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +67,31 @@
 		2A6A51F61E29C6CA00643AEB /* JukeboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JukeboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6A51FA1E29C6CA00643AEB /* JukeboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JukeboxTests.m; sourceTree = "<group>"; };
 		2A6A51FC1E29C6CA00643AEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6A52061E29C6F800643AEB /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		2A6A52071E29C6F800643AEB /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		2A6A520B1E29C71500643AEB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2A6A520D1E29C71D00643AEB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2A6A52451E29CFC600643AEB /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		2A6A52461E29D03E00643AEB /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
+		2A6A52481E29D0E300643AEB /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		2A6A52491E29D11100643AEB /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		2A6A524B1E29D13800643AEB /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		2A6A524C1E29D15100643AEB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		2A6A524E1E29D17700643AEB /* backdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backdrop.png; sourceTree = "<group>"; };
+		2A6A52501E2A07C100643AEB /* PartyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartyController.h; sourceTree = "<group>"; };
+		2A6A52511E2A07EB00643AEB /* PartyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyController.m; sourceTree = "<group>"; };
+		2A6A52531E2A944500643AEB /* Jukebox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jukebox@2x.png"; sourceTree = "<group>"; };
+		2A6A52541E2A944500643AEB /* Jukebox@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jukebox@1x.png"; sourceTree = "<group>"; };
+		2A6A52571E2A94D100643AEB /* JukeboxSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JukeboxSmall@2x.png"; sourceTree = "<group>"; };
+		2A6A52581E2A94D100643AEB /* JukeboxSmall@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JukeboxSmall@1x.png"; sourceTree = "<group>"; };
+		2A6A52611E2A992200643AEB /* Play@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@1x.png"; sourceTree = "<group>"; };
+		2A6A52621E2A992200643AEB /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
+		2A6A52651E2A99AD00643AEB /* Next@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next@1x.png"; sourceTree = "<group>"; };
+		2A6A52661E2A99AD00643AEB /* Next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next@2x.png"; sourceTree = "<group>"; };
+		2A6A52671E2A99AD00643AEB /* Pause@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@1x.png"; sourceTree = "<group>"; };
+		2A6A52681E2A99AD00643AEB /* Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@2x.png"; sourceTree = "<group>"; };
+		2A6A526D1E2AA48900643AEB /* Arrow@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow@1x.png"; sourceTree = "<group>"; };
+		2A6A526E1E2AA48900643AEB /* Arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +99,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6A52471E29D03E00643AEB /* SpotifyMetadata.framework in Frameworks */,
+				2A6A520E1E29C71D00643AEB /* SystemConfiguration.framework in Frameworks */,
+				2A6A520C1E29C71500643AEB /* AVFoundation.framework in Frameworks */,
+				2A6A52081E29C6F800643AEB /* SpotifyAudioPlayback.framework in Frameworks */,
+				2A6A52091E29C6F800643AEB /* SpotifyAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +123,7 @@
 				2A6A51DF1E29C6CA00643AEB /* Jukebox */,
 				2A6A51F91E29C6CA00643AEB /* JukeboxTests */,
 				2A6A51DE1E29C6CA00643AEB /* Products */,
+				2A6A520A1E29C71500643AEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +139,22 @@
 		2A6A51DF1E29C6CA00643AEB /* Jukebox */ = {
 			isa = PBXGroup;
 			children = (
+				2A6A52051E29C6E400643AEB /* Frameworks */,
 				2A6A51E31E29C6CA00643AEB /* AppDelegate.h */,
+				2A6340A31E5BA995000224DB /* JukeboxViewController.h */,
+				2A6340A41E5BA995000224DB /* JukeboxViewController.m */,
+				2A6A52451E29CFC600643AEB /* Config.h */,
 				2A6A51E41E29C6CA00643AEB /* AppDelegate.m */,
 				2A6A51E61E29C6CA00643AEB /* ViewController.h */,
 				2A6A51E71E29C6CA00643AEB /* ViewController.m */,
+				2A6A52481E29D0E300643AEB /* LoginController.h */,
+				2A6A52491E29D11100643AEB /* LoginController.m */,
+				2A6A52501E2A07C100643AEB /* PartyController.h */,
+				2A6A52511E2A07EB00643AEB /* PartyController.m */,
+				2A6A524B1E29D13800643AEB /* WebViewController.h */,
+				2A6A524C1E29D15100643AEB /* WebViewController.m */,
+				2A6340AC1E5BAC0E000224DB /* JukeboxWebViewController.h */,
+				2A6340AD1E5BAC0E000224DB /* JukeboxWebViewController.m */,
 				2A6A51E91E29C6CA00643AEB /* Main.storyboard */,
 				2A6A51EC1E29C6CA00643AEB /* Assets.xcassets */,
 				2A6A51EE1E29C6CA00643AEB /* LaunchScreen.storyboard */,
@@ -97,6 +167,19 @@
 		2A6A51E01E29C6CA00643AEB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A6A526D1E2AA48900643AEB /* Arrow@1x.png */,
+				2A6A526E1E2AA48900643AEB /* Arrow@2x.png */,
+				2A6A52651E2A99AD00643AEB /* Next@1x.png */,
+				2A6A52661E2A99AD00643AEB /* Next@2x.png */,
+				2A6A52671E2A99AD00643AEB /* Pause@1x.png */,
+				2A6A52681E2A99AD00643AEB /* Pause@2x.png */,
+				2A6A52611E2A992200643AEB /* Play@1x.png */,
+				2A6A52621E2A992200643AEB /* Play@2x.png */,
+				2A6A52571E2A94D100643AEB /* JukeboxSmall@2x.png */,
+				2A6A52581E2A94D100643AEB /* JukeboxSmall@1x.png */,
+				2A6A52531E2A944500643AEB /* Jukebox@2x.png */,
+				2A6A52541E2A944500643AEB /* Jukebox@1x.png */,
+				2A6A524E1E29D17700643AEB /* backdrop.png */,
 				2A6A51E11E29C6CA00643AEB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,6 +192,25 @@
 				2A6A51FC1E29C6CA00643AEB /* Info.plist */,
 			);
 			path = JukeboxTests;
+			sourceTree = "<group>";
+		};
+		2A6A52051E29C6E400643AEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A6A52461E29D03E00643AEB /* SpotifyMetadata.framework */,
+				2A6A52061E29C6F800643AEB /* SpotifyAudioPlayback.framework */,
+				2A6A52071E29C6F800643AEB /* SpotifyAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A6A520A1E29C71500643AEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A6A520D1E29C71D00643AEB /* SystemConfiguration.framework */,
+				2A6A520B1E29C71500643AEB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +262,13 @@
 				TargetAttributes = {
 					2A6A51DC1E29C6CA00643AEB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HXDEDURD95;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2A6A51F51E29C6CA00643AEB = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -193,9 +301,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6A52641E2A992200643AEB /* Play@2x.png in Resources */,
+				2A6A525A1E2A94D100643AEB /* JukeboxSmall@1x.png in Resources */,
+				2A6A52691E2A99AD00643AEB /* Next@1x.png in Resources */,
+				2A6A52631E2A992200643AEB /* Play@1x.png in Resources */,
+				2A6A52701E2AA48900643AEB /* Arrow@2x.png in Resources */,
 				2A6A51F01E29C6CA00643AEB /* LaunchScreen.storyboard in Resources */,
+				2A6A526C1E2A99AD00643AEB /* Pause@2x.png in Resources */,
+				2A6A52551E2A944500643AEB /* Jukebox@2x.png in Resources */,
+				2A6A52561E2A944500643AEB /* Jukebox@1x.png in Resources */,
+				2A6A526A1E2A99AD00643AEB /* Next@2x.png in Resources */,
+				2A6A524F1E29D17700643AEB /* backdrop.png in Resources */,
+				2A6A526F1E2AA48900643AEB /* Arrow@1x.png in Resources */,
 				2A6A51ED1E29C6CA00643AEB /* Assets.xcassets in Resources */,
+				2A6A526B1E2A99AD00643AEB /* Pause@1x.png in Resources */,
 				2A6A51EB1E29C6CA00643AEB /* Main.storyboard in Resources */,
+				2A6A52591E2A94D100643AEB /* JukeboxSmall@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +335,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A6A51E81E29C6CA00643AEB /* ViewController.m in Sources */,
+				2A6A524D1E29D15100643AEB /* WebViewController.m in Sources */,
+				2A6340AE1E5BAC0E000224DB /* JukeboxWebViewController.m in Sources */,
+				2A6A524A1E29D11100643AEB /* LoginController.m in Sources */,
 				2A6A51E51E29C6CA00643AEB /* AppDelegate.m in Sources */,
+				2A6340A51E5BA995000224DB /* JukeboxViewController.m in Sources */,
+				2A6A52521E2A07EB00643AEB /* PartyController.m in Sources */,
 				2A6A51E21E29C6CA00643AEB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,8 +477,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HXDEDURD95;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Jukebox",
+				);
 				INFOPLIST_FILE = Jukebox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shmansion.Jukebox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -362,8 +494,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HXDEDURD95;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Jukebox",
+				);
 				INFOPLIST_FILE = Jukebox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shmansion.Jukebox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +550,7 @@
 				2A6A52011E29C6CA00643AEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A6A52021E29C6CA00643AEB /* Build configuration list for PBXNativeTarget "JukeboxTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +559,7 @@
 				2A6A52041E29C6CA00643AEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
